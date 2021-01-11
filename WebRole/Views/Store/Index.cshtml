@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CloudService_Data.Store>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RowKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoreName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoreAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhonePrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RowKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoreName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoreAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhonePrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RowKey }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RowKey })
+        </td>
+    </tr>
+}
+
+</table>
